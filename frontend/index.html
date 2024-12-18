@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Line - Inventario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fashion Line - Gestión de Inventario</h1>
+    </header>
+    <main>
+        <!-- Sección para registrar productos -->
+        <section>
+            <h2>Registrar Producto</h2>
+            <form id="productForm" enctype="multipart/form-data">
+                <label for="name">Nombre del Producto</label>
+                <input type="text" id="name" name="nombre" placeholder="Nombre del Producto" required>
+                
+                <label for="category">Categoría</label>
+                <select id="category" name="categoria" required>
+                    <option value="" selected disabled>Seleccione una categoría</option>
+                    <option value="Camiseta">Camiseta</option>
+                    <option value="Blusa">Blusa</option>
+                    <option value="Ropa Interior">Ropa Interior</option>
+                    <option value="Jean Femenino">Jean Femenino</option>
+                    <option value="Jean Masculino">Jean Masculino</option>
+                    <option value="Pantalon">Pantalon</option>
+                    <option value="Accesorios">Accesorios</option>
+                    <option value="Calzado">Calzado</option>
+                </select>
+                
+                <label for="size">Talla</label>
+                <select id="size" name="talla" required></select>
+                
+                <label for="price">Precio</label>
+                <input type="number" id="price" name="precio" placeholder="Precio" required>
+                
+                <label for="quantity">Cantidad</label>
+                <input type="number" id="quantity" name="cantidad" placeholder="Cantidad" required>
+                
+                <label for="photo">Foto (opcional)</label>
+                <input type="file" id="photo" name="foto">
+                
+                <div id="photoPreview">
+                    <img id="previewImage" src="" alt="Vista previa de la imagen" style="max-width: 100px; display: none;">
+                </div>
+                
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+
+        <!-- Sección para inventario -->
+        <section>
+            <h2>Inventario</h2>
+            <div class="search-container">
+                <select id="searchType" class="search-filter">
+                    <option value="all">Buscar en todo</option>
+                    <option value="name">Buscar por nombre</option>
+                    <option value="category">Buscar por categoría</option>
+                </select>
+                <input type="text" id="search" placeholder="Buscar...">
+            </div>
+            <table id="inventory">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Talla</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
